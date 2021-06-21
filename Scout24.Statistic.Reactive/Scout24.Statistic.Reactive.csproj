@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>An IObservable based GitHub API client library for .NET and .NET Core using Reactive Extensions</Description>
+    <AssemblyTitle>Scout24.Statistic.Reactive</AssemblyTitle>
+    <Version>1.0.0</Version>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <AssemblyName>Scout24.Statistic.Reactive</AssemblyName>
+    <PackageId>Scout24.Statistic.Reactive</PackageId>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <NetStandardImplicitPackageVersion>2.0.0</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NoWarn>1591;1701;1702;1705</NoWarn>
+    <Company>Scout24 Schweiz AG</Company>
+    <Authors>Billy Ngo</Authors>
+    <Product>Scout24 Statistic</Product>
+    <Copyright>Scout24 Schweiz AG</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Scout24.Statistic\Helpers\Ensure.cs;..\Scout24.Statistic\Helpers\Pagination.cs" />
+    <None Include="app.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Scout24.Statistic\Scout24.Statistic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="4.4.1" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
